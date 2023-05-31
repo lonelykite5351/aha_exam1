@@ -1,3 +1,4 @@
 {
-  "extends": ["eslint:recommended", "google"]
+  "extends": ["eslint:recommended", "google"],
+  "rules": { "linebreak-style": ["off", "windows"] }
 }
