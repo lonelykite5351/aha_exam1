@@ -2,12 +2,18 @@ import './PasswordInput.css';
 
 const PasswordInput = () => {
   return (
-    <div className="PasswordInput w-[1219px] h-[1214px] flex flex-col">
-      <div className="top bg-[#181818] py-[70px] pl-[122px] rounded-t-[35px]">
-        <h1 className="h1Title">Password Input</h1>
+    <div className=
+      "PasswordInput w-[1219px] h-[1214px] flex flex-col justify-between">
+      <div className=
+        "flex content-center items-center \
+        bg-[#181818] h-[283px] px-[5%] rounded-t-[30px]">
+        <h1 className=
+          "w-full text-white text-[96px] leading-none font-bold">
+          Password Input
+        </h1>
       </div>
-      <div className="bottom">
-        <h1>bottom</h1>
+      <div className="bg-[#181818] h-[907px]">
+        <h1 className="text-white">bottom</h1>
       </div>
     </div>
   );
