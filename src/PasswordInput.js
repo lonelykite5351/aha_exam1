@@ -26,24 +26,32 @@ const PasswordInput = () => {
               onChange={(e) => setPassword(e.target.value)}
               className='w-full px-[9px] py-[8px] bg-[#181818] text-white \
               border-white/50 border-[3px] rounded-lg leading-6 \
-              placeholder:text-white/50'
+              placeholder:text-white/50 mb-5'
             >
             </input>
-            <PasswordChecklist
-              rules={
-                ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
-              }
-              minLength={8}
-              value={password}
-              messages={{
-                capital: 'Have at least one uppercase letter',
-                lowercase: 'Have at least one lowercase letter',
-                number: 'Have at least one number',
-                specialChar: 'Have at least one special character (!@#$...etc)',
-                minLength: 'Longer than 8 characters',
-              }}
-              iconSize={58}
-            />
+            <section className='bg-[#242424] rounded-lg py-4'>
+              <PasswordChecklist
+                className='flex flex-col justify-center items-center \
+                  leading-none '
+                rules={
+                  ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
+                }
+                minLength={8}
+                value={password}
+                messages={{
+                  capital: 'Have at least one uppercase letter',
+                  lowercase: 'Have at least one lowercase letter',
+                  number: 'Have at least one number',
+                  specialChar:
+                    'Have at least one special character(!@#$...etc)',
+                  minLength: 'Longer than 8 characters',
+                }}
+                iconComponents={{
+                  ValidIcon: <img src="validIcon.png" />,
+                  InvalidIcon: <img src="invalidIcon.png" />,
+                }}
+              />
+            </section>
           </label>
         </form>
       </div>
