@@ -1,6 +1,9 @@
+import React, {useState} from 'react';
 import './PasswordInput.css';
+import PasswordChecklist from 'react-password-checklist';
 
 const PasswordInput = () => {
+  const [password, setPassword] = useState('');
   return (
     <div className=
       'PasswordInput bg-white rounded-t-[50px] w-[1219px] h-[1214px] \
@@ -19,13 +22,28 @@ const PasswordInput = () => {
             <span className='block text-sm font-medium text-slate-700'>
               Password
             </span>
-            <input type='text' placeholder='Password'
+            <input type='password' placeholder='Password'
+              onChange={(e) => setPassword(e.target.value)}
               className='w-full px-[9px] py-[8px] bg-[#181818] text-white \
               border-white/50 border-[3px] rounded-lg leading-6 \
               placeholder:text-white/50'
             >
-
             </input>
+            <PasswordChecklist
+              rules={
+                ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
+              }
+              minLength={8}
+              value={password}
+              messages={{
+                capital: 'Have at least one uppercase letter',
+                lowercase: 'Have at least one lowercase letter',
+                number: 'Have at least one number',
+                specialChar: 'Have at least one special character (!@#$...etc)',
+                minLength: 'Longer than 8 characters',
+              }}
+              iconSize={58}
+            />
           </label>
         </form>
       </div>
