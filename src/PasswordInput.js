@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import './PasswordInput.css';
+// import './PasswordInput.css';
+import './PasswordInput.scss';
 import PasswordChecklist from 'react-password-checklist';
 
 const PasswordInput = () => {
@@ -31,8 +32,8 @@ const PasswordInput = () => {
             </input>
             <section className='bg-[#242424] rounded-lg py-4'>
               <PasswordChecklist
-                className='flex flex-col justify-center items-center \
-                  leading-none '
+                className='checklist_Section flex flex-col \
+                  justify-center items-centerleading-none '
                 rules={
                   ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
                 }
