@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-// import './PasswordInput.css';
 import './PasswordInput.scss';
 import PasswordChecklist from 'react-password-checklist';
 
@@ -17,22 +16,26 @@ const PasswordInput = () => {
           Password Input
         </h1>
       </div>
-      <div className='flex justify-center items-start bg-[#181818] h-[907px]'>
-        <form>
+      <div className='h-[907px] flex justify-center items-start bg-[#181818]'>
+        <form className='w-[335px]'>
           <label className='block'>
-            <span className='block text-sm font-medium text-slate-700'>
+            <span className='block text-[12px] leading-[18px] font-medium \
+              text-slate-700 tracking-[0.4px]'>
               Password
             </span>
             <input type='password' placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
-              className='w-full px-[9px] py-[8px] bg-[#181818] text-white \
-              border-white/50 border-[3px] rounded-lg leading-6 \
-              placeholder:text-white/50 mb-5'
+              className='w-full text-base bg-[#181818] text-white \
+              border-white/50 border-[3px] rounded-lg leading-[24px] \
+              placeholder:text-white/50 mb-5 tracking-[0.15px] \
+              px-[16px] py-[12px] outline-0 \
+              focus:border-[#00A3FF] hover:border-white'
             >
             </input>
-            <section className='bg-[#242424] rounded-lg py-4'>
+            <section className='bg-[#242424] rounded-lg px-[12px] py-[8px] \
+              shadow-[4px_4px_20px_rgba(0,0,0,0.3)]'>
               <PasswordChecklist
-                className='checklist_Section flex flex-col \
+                className='passwordChecklist flex flex-col \
                   justify-center items-centerleading-none '
                 rules={
                   ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
