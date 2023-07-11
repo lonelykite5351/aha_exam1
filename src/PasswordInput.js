@@ -16,13 +16,15 @@ const PasswordInput = () => {
           Password Input
         </h1>
       </div>
-      <div className='h-[907px] flex justify-center items-start bg-[#181818]'>
+      <div className='h-[907px] flex justify-center items-start bg-[#181818] \
+        py-5'>
         <form className='w-[335px]'>
-          <label className='block'>
-            <span className='block text-[12px] leading-[18px] font-medium \
-              text-slate-700 tracking-[0.4px]'>
+          <div className='relative'>
+            <label className='block text-white text-[12px] leading-none \
+              font-medium text-slate-700 tracking-[0.4px] bg-[#181818] \
+              left-[6px] bottom-[100%] translate-y-2/4 absolute px-[4px] '>
               Password
-            </span>
+            </label>
             <input type='password' placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
               className='w-full text-base bg-[#181818] text-white \
@@ -32,31 +34,31 @@ const PasswordInput = () => {
               focus:border-[#00A3FF] hover:border-white'
             >
             </input>
-            <section className='bg-[#242424] rounded-lg px-[12px] py-[8px] \
-              shadow-[4px_4px_20px_rgba(0,0,0,0.3)]'>
-              <PasswordChecklist
-                className='passwordChecklist flex flex-col \
-                  justify-center items-centerleading-none '
-                rules={
-                  ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
-                }
-                minLength={8}
-                value={password}
-                messages={{
-                  capital: 'Have at least one uppercase letter',
-                  lowercase: 'Have at least one lowercase letter',
-                  number: 'Have at least one number',
-                  specialChar:
-                    'Have at least one special character(!@#$...etc)',
-                  minLength: 'Longer than 8 characters',
-                }}
-                iconComponents={{
-                  ValidIcon: <img src="validIcon.png" />,
-                  InvalidIcon: <img src="invalidIcon.png" />,
-                }}
-              />
-            </section>
-          </label>
+          </div>
+          <section className='bg-[#242424] rounded-lg px-[12px] py-[8px] \
+            shadow-[4px_4px_20px_rgba(0,0,0,0.3)]'>
+            <PasswordChecklist
+              className='passwordChecklist flex flex-col \
+                justify-center items-centerleading-none '
+              rules={
+                ['capital', 'lowercase', 'number', 'specialChar', 'minLength']
+              }
+              minLength={8}
+              value={password}
+              messages={{
+                capital: 'Have at least one uppercase letter',
+                lowercase: 'Have at least one lowercase letter',
+                number: 'Have at least one number',
+                specialChar:
+                  'Have at least one special character(!@#$...etc)',
+                minLength: 'Longer than 8 characters',
+              }}
+              iconComponents={{
+                ValidIcon: <img src="validIcon.png" />,
+                InvalidIcon: <img src="invalidIcon.png" />,
+              }}
+            />
+          </section>
         </form>
       </div>
     </div>
